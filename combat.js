@@ -28,7 +28,7 @@ while (isSunk == false) {
 
 let stats = "You took " + guesses + " guesses to sink the battleship, " +
 "which means your shooting accuracy was " + (3/guesses) + " or " + ((3/guesses)*100).toFixed(2) + "%";
-alert(stats);
+// alert(stats);
 document.write(stats);
 
 
