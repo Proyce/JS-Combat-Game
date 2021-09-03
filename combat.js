@@ -51,10 +51,20 @@ let count = 0;
 let list;
 
 for(i = 0; i < scores.length; i++) {
-// list = "Bubble solution #" + i + " scores :" + scores[i] + "\n";
+// list = "Bubble solution #" + i + " scores :" + scores[i];
 list = `Bubble solution # ${i}, scores : ${scores[i]}`;
-document.write(list);
+document.write(list + '<br>');
+// console.log(list);
 count++;
 }
 
-// document.write(count);
+let statement = 
+`
+Bubbles tests: ${count}<br>
+Highest bubble score: ${Math.max(...scores)}<br>
+Solutions with highest score: ${scores.indexOf(Math.max(...scores))}.
+`;
+
+
+
+document.write( '<br>' + statement);
