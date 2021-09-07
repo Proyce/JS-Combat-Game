@@ -40,31 +40,42 @@
 
 
 var scores = 
-[60, 50, 60, 58, 54, 54,
-58, 50, 52, 54, 48, 69,
-34, 55, 51, 52, 44, 51,
-69, 64, 66, 55, 52, 61,
-46, 31, 57, 52, 44, 18,
-41, 53, 55, 61, 51, 44];
+[60, 50, 60, 58, 54, 54, 18, 72,
+58, 50, 52, 72, 54, 48, 69, 11,
+34, 55, 51, 69, 18, 52, 44, 51,
+72, 69, 64, 66, 55, 69, 52, 61,
+46, 31, 57, 72,  55, 52, 44, 18,
+41, 53, 55, 61, 72, 51, 62, 44];
 
-let count = 0;
 let list;
+let highestScore = 0;
 
 for(i = 0; i < scores.length; i++) {
 // list = "Bubble solution #" + i + " scores :" + scores[i];
 list = `Bubble solution # ${i}, scores : ${scores[i]}`;
 document.write(list + '<br>');
 // console.log(list);
-count++;
+if(scores[i] > highestScore) {
+    highestScore = scores[i];
+    }
 }
 
-let statement = 
+let bestSolutions = [];
+
+for(let i = 0; i < scores.length; i++) {
+    if(scores[i] == highestScore) {
+    bestSolutions.push(i)
+    }
+}
+
+let report = 
 `
-Bubbles tests: ${count}<br>
+Bubbles tests: ${scores.length}<br>
 Highest bubble score: ${Math.max(...scores)}<br>
-Solutions with highest score: ${scores.indexOf(Math.max(...scores))}.
+Solutions 1 with highest score: ${scores.indexOf(Math.max(...scores))}<br>
+
+Solutions 2 with highest score: ${bestSolutions}
 `;
 
 
-
-document.write( '<br>' + statement);
+document.write( '<br>' + report);
